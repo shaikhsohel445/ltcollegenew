@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSIT Institute of Technology - Placements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Variables --- */
+       :root {
+    --primary-red: #592bbb;
+    --accent-red: #cb3d3d;
+    --dark-blue: #0f193c;
+    --light-grey-bg: #f5f5f5;
+    --medium-grey-bg: #e6e6e6;
+    --border-color: #ddd;
+    --text-color: #333;
+    --heading-color: #222;
+    --percentage-row-bg: #d1e7dd;
+    --chart-blue: #36a2eb;
+    --chart-orange: #ff9f40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f7f7f7;
+}
+
+
+
+/* 
+//remaining css */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px; /* Consistent horizontal padding */
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding: 0; /* No horizontal padding for fluid elements */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lato', sans-serif; /* Headings might use a different font */
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- Banner Section --- */
+        .banner {
+            background-color: #f0f0f0; /* Light grey from the banner */
+            padding: 20px 0;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            /* Added margin-top to separate from top of page since header is gone */
+            margin-top: 0; /* Align with top edge */
+        }
+
+        .banner h1 {
+            font-size: 28px;
+            color: var(--accent-red); /* More vibrant red for the banner text */
+            margin: 0;
+            padding-left: 0; /* Already handled by container */
+            font-weight: 700;
+        }
+
+        /* --- Placements Content Section --- */
+        .placements-content {
+            display: flex;
+            gap: 30px;
+            padding: 30px 0;
+            align-items: flex-start; /* Align top of cards */
+        }
+
+        .placement-stats {
+            flex: 2; /* Takes more space */
+            min-width: 0; /* Allows content to shrink */
+        }
+
+        .placement-news-section {
+            flex: 1; /* Takes less space */
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between news card and enquiry */
+            min-width: 0; /* Allows content to shrink */
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            background-color: var(--medium-grey-bg);
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 18px;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        /* Table Styling */
+        .placement-stats table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .placement-stats table th,
+        .placement-stats table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .placement-stats table th {
+            background-color: var(--medium-grey-bg);
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .placement-stats table tr:nth-child(even) {
+            background-color: var(--light-grey-bg);
+        }
+
+        .placement-stats table .percentage-row {
+            background-color: var(--percentage-row-bg); /* Light green-ish background as in screenshot */
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .placement-stats table .percentage-row td:first-child {
+            text-align: left; /* Align first cell left */
+        }
+
+        /* Chart Styling (Custom Bars to mimic the screenshot) */
+        .chart-container {
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .chart-bars {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end; /* Bars grow upwards from the bottom */
+            height: 180px; /* Max height for the chart area */
+            border-bottom: 1px solid #ccc; /* X-axis line */
+            padding-bottom: 10px;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; /* Keep bars at the bottom */
+            height: 100%;
+            gap: 2px; /* Space between bars in a group */
+            position: relative;
+            width: 15%; /* Adjust width to fit */
+        }
+
+        .bar {
+            width: 40%; /* Width of each individual bar */
+            background-color: grey; /* Default */
+            transition: height 0.3s ease;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .bar.blue {
+            background-color: var(--chart-blue);
+        }
+
+        .bar.orange {
+            background-color: var(--chart-orange);
+        }
+
+        .bar-group .label {
+            position: absolute;
+            bottom: -25px; /* Position below the x-axis */
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px; /* Space below the bars */
+            gap: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .chart-legend span {
+            display: flex;
+            align-items: center;
+        }
+
+        .chart-legend i.fas.fa-square {
+            font-size: 10px;
+            margin-right: 5px;
+        }
+
+        .blue-square {
+            color: var(--chart-blue);
+        }
+
+        .orange-square {
+            color: var(--chart-orange);
+        }
+
+
+        /* Placement News Styling */
+        .placement-news-card .card-header.placement-news-header {
+            background-color: var(--accent-red); /* Red background for news header */
+            color: white;
+        }
+
+        .placement-news-card .card-header.placement-news-header h3 {
+            color: white;
+        }
+
+        .placement-news-card .card-body.placement-news-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .placement-news-card .card-body.placement-news-body ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 15px;
+            color: var(--text-color);
+        }
+
+        .placement-news-card .card-body.placement-news-body ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .placement-news-card .card-body.placement-news-body ul li i {
+            color: var(--accent-red); /* Red arrow icon */
+            margin-right: 10px;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            padding-top: 3px; /* Align arrow with text */
+        }
+
+        .placement-enquiry {
+            background-color: var(--accent-red); /* Red background for enquiry box */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* Fixed height to match screenshot */
+            margin-left: auto; /* Push to right if space allows on larger screens */
+            margin-right: -20px; /* Overlap right border slightly as in screenshot */
+            position: relative; /* For exact positioning if needed */
+            width: 160px; /* Fixed width to match screenshot */
+            font-family: 'Lato', sans-serif;
+        }
+
+        .placement-enquiry p:first-child {
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .placement-enquiry p.enquiry-date {
+            font-size: 13px;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+
+        /* --- Welcome Section --- */
+        .welcome-section {
+            background-color: #e0e0e0; /* Light grey */
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 30px; /* Space from above content */
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .welcome-section h2 {
+            font-size: 26px;
+            color: var(--dark-blue); /* Dark blue heading as in screenshot */
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .welcome-section p {
+            font-size: 16px;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Companies Visited Section --- */
+        .companies-visited {
+            padding: 30px 0;
+        }
+
+        .companies-visited h2 {
+            font-size: 24px;
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 20px; /* Space between columns */
+        }
+
+        .company-list-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .company-list-card table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .company-list-card table th,
+        .company-list-card table td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+
+        .company-list-card table th {
+            background-color: var(--accent-red); /* Red header for company lists */
+            font-weight: 600;
+            color: white;
+        }
+
+        .company-list-card table tr:nth-child(even) {
+            background-color: var(--light-grey-bg);
+        }
+
+        /* --- Scrollbar Styling (as seen on the right of the news section) --- */
+        .placement-news-body {
+            max-height: 250px; /* Adjust based on desired visible items */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding-right: 5px; /* Space for scrollbar */
+        }
+
+        /* Webkit (Chrome, Safari) scrollbar styles */
+        .placement-news-body::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
+        }
+
+        .placement-news-body::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Color of the track */
+            border-radius: 4px;
+        }
+
+        .placement-news-body::-webkit-scrollbar-thumb {
+            background: #888; /* Color of the scroll thumb */
+            border-radius: 4px;
+        }
+
+        .placement-news-body::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Color when hovered */
+        }
+
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 1250px) {
+            /* No navbar, so no specific adjustments needed here */
+        }
+
+        @media (max-width: 992px) {
+            .placements-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .companies-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+            }
+
+            .placement-enquiry {
+                margin-right: 0; /* Remove negative margin on smaller screens */
+                width: auto; /* Allow width to be flexible */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 24px;
+            }
+
+            .welcome-section h2 {
+                font-size: 22px;
+            }
+
+            .companies-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+
+            .placement-news-body {
+                max-height: none; /* Remove max-height for easier viewing on small screens */
+                overflow-y: visible;
+                padding-right: 0;
+            }
+
+            .placement-news-body::-webkit-scrollbar {
+                display: none; /* Hide scrollbar if not needed */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner h1 {
+                font-size: 20px;
+            }
+
+            .placements-content,
+            .companies-visited {
+                padding: 20px 0;
+            }
+
+            .card-body,
+            .card-header {
+                padding: 10px;
+            }
+
+            .placement-stats table th,
+            .placement-stats table td {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .welcome-section h2 {
+                font-size: 20px;
+            }
+
+            .placement-enquiry {
+                height: 80px;
+            }
+
+            .placement-enquiry p:first-child {
+                font-size: 15px;
+            }
+
+            .placement-enquiry p.enquiry-date {
+                font-size: 12px;
+            }
+        }
+
+        .sidebar {
+      width: 230px;
+      background-color: #f5c518;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu {
+      background-color: #002147;
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 1px solid #fff;
+    }
+
+    .menu:hover,
+    .menu.active {
+      background-color: #f5c518;
+      color: #002147;
+    }
+
+    .content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    h2 {
+      color: #002147;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+.header {
+      background-color: #002147;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Container for sidebar + content */
+    .main {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #002147;
+      color: white;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #011e3c;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+    }
+
+    /* Right content area */
+    .content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #002147;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="banner">
+            <div class="container">
+                <h1>THE LATEST AT PLACEMENTS</h1>
+            </div>
+        </section>
+
+        <section class="placements-content container">
+            <div class="placement-stats">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Placement Details - Year wise</h3>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Academic Year</th>
+                                    <th>2022-23</th>
+                                    <th>2021-22</th>
+                                    <th>2020-21</th>
+                                    <th>2019-20</th>
+                                    <th>2018-19</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>No. of outgoing students</td>
+                                    <td>272</td>
+                                    <td>353</td>
+                                    <td>360</td>
+                                    <td>411</td>
+                                    <td>398</td>
+                                </tr>
+                                <tr>
+                                    <td>No. of Eligible students</td>
+                                    <td>210</td>
+                                    <td>245</td>
+                                    <td>267</td>
+                                    <td>270</td>
+                                    <td>280</td>
+                                </tr>
+                                <tr>
+                                    <td>No. of Students Placed with Single Offers.</td>
+                                    <td>188</td>
+                                    <td>206</td>
+                                    <td>174</td>
+                                    <td>204</td>
+                                    <td>208</td>
+                                </tr>
+                                <tr class="percentage-row">
+                                    <td>Percentage of Placements</td>
+                                    <td>89.52%</td>
+                                    <td>84.08%</td>
+                                    <td>65.16%</td>
+                                    <td>75.55%</td>
+                                    <td>74.28%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="chart-container">
+                            <div class="chart-bars">
+                                <div class="bar-group">
+                                    <div class="bar blue" style="height: 80%;"></div>
+                                    <div class="bar orange" style="height: 60%;"></div>
+                                    <span class="label">2022-23</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar blue" style="height: 90%;"></div>
+                                    <div class="bar orange" style="height: 70%;"></div>
+                                    <span class="label">2021-22</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar blue" style="height: 75%;"></div>
+                                    <div class="bar orange" style="height: 50%;"></div>
+                                    <span class="label">2020-21</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar blue" style="height: 85%;"></div>
+                                    <div class="bar orange" style="height: 65%;"></div>
+                                    <span class="label">2019-20</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar blue" style="height: 82%;"></div>
+                                    <div class="bar orange" style="height: 68%;"></div>
+                                    <span class="label">2018-19</span>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <span><i class="fas fa-square blue-square"></i> Eligible Students</span>
+                                <span><i class="fas fa-square orange-square"></i> Students Placed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="placement-news-section">
+                <div class="card placement-news-card">
+                    <div class="card-header placement-news-header">
+                        <h3>Placement News</h3>
+                    </div>
+                    <div class="card-body placement-news-body">
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Planet Spark Virtual Drive on 24th December 2024 for B.E 2025 Batch held at KSIT / KSSEM</li>
+                            <li><i class="fas fa-arrow-right"></i> Avail Solutions On Campus Drive on 23rd December 2024 for B.E 2025 Batch held at KSIT / KSSEM</li>
+                            <li><i class="fas fa-arrow-right"></i> DeltaX Virtual Drive on 19th December 2024 for B.E 2025 Batch held at KSIT / KSSEM</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="placement-enquiry">
+                    <p>Admission Enquiry</p>
+                    <p class="enquiry-date">7/8/2025</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-section">
+            <div class="container">
+                <h2>Welcome To Placements Department</h2>
+                <p>Placement is an integral part of the education process of a student in KSIT. Placement preparation starts soon after admissions.</p>
+            </div>
+        </section>
+
+        <section class="companies-visited container">
+            <h2>Companies Visited for 2025 Batch till 27/05/2025</h2>
+            <div class="companies-grid">
+                <div class="company-list-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SL.No.</th>
+                                <th>Name Of Company</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1.</td><td>INFOSYS</td></tr>
+                            <tr><td>2.</td><td>IBM INDIA</td></tr>
+                            <tr><td>3.</td><td>TECH MAHINDRA</td></tr>
+                            <tr><td>4.</td><td>ACCOLITE DIGITAL</td></tr>
+                            <tr><td>5.</td><td>ACCENTURE</td></tr>
+                            <tr><td>6.</td><td>CAPGEMINI</td></tr>
+                            <tr><td>7.</td><td>DELOITTE</td></tr>
+                            <tr><td>8.</td><td>TCS</td></tr>
+                            <tr><td>9.</td><td>WIPRO</td></tr>
+                            <tr><td>10.</td><td>COGNIZANT</td></tr>
+                            <tr><td>11.</td><td>HCLTECH</td></tr>
+                            <tr><td>12.</td><td>AMAZON</td></tr>
+                            <tr><td>13.</td><td>MICROSOFT</td></tr>
+                            <tr><td>14.</td><td>GOOGLE</td></tr>
+                            <tr><td>15.</td><td>INTEL</td></tr>
+                            <tr><td>16.</td><td>QUALCOMM</td></tr>
+                            <tr><td>17.</td><td>CISCO</td></tr>
+                            <tr><td>18.</td><td>ADOBE</td></tr>
+                            <tr><td>19.</td><td>ORACLE</td></tr>
+                            <tr><td>20.</td><td>SAP LABS</td></tr>
+                            <tr><td>21.</td><td>SALESFORCE</td></tr>
+                            <tr><td>22.</td><td>VMWARE</td></tr>
+                            <tr><td>23.</td><td>SYNOPSYS</td></tr>
+                            <tr><td>24.</td><td>CADENCE</td></tr>
+                            <tr><td>25.</td><td>BROADCOM</td></tr>
+                            <tr><td>26.</td><td>HP</td></tr>
+                            <tr><td>27.</td><td>DELL</td></tr>
+                            <tr><td>28.</td><td>LENOVO</td></tr>
+                            <tr><td>29.</td><td>SAMSUNG</td></tr>
+                            <tr><td>30.</td><td>LG</td></tr>
+                            <tr><td>31.</td><td>SONY</td></tr>
+                            <tr><td>32.</td><td>PANASONIC</td></tr>
+                            <tr><td>33.</td><td>TATA CONSULTANCY SERVICES</td></tr>
+                            <tr><td>34.</td><td>MAHINDRA & MAHINDRA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="company-list-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SL.No.</th>
+                                <th>Name Of Company</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>35.</td><td>ZOHO CORP</td></tr>
+                            <tr><td>36.</td><td>WYZMINDZ</td></tr>
+                            <tr><td>37.</td><td>APARNA ENTERPRISES LTD</td></tr>
+                            <tr><td>38.</td><td>ROC CONCRETE</td></tr>
+                            <tr><td>39.</td><td>ULTRATECH CEMENT</td></tr>
+                            <tr><td>40.</td><td>LAFARGE HOLCIM</td></tr>
+                            <tr><td>41.</td><td>ACC CEMENT</td></tr>
+                            <tr><td>42.</td><td>DALMIA BHARAT</td></tr>
+                            <tr><td>43.</td><td>JSW CEMENT</td></tr>
+                            <tr><td>44.</td><td>BIRLA CEMENT</td></tr>
+                            <tr><td>45.</td><td>SHREE CEMENT</td></tr>
+                            <tr><td>46.</td><td>RAMCO CEMENTS</td></tr>
+                            <tr><td>47.</td><td>AMBUJA CEMENT</td></tr>
+                            <tr><td>48.</td><td>INDIA CEMENTS</td></tr>
+                            <tr><td>49.</td><td>PRISM JOHNSON</td></tr>
+                            <tr><td>50.</td><td>JK LAKSHMI CEMENT</td></tr>
+                            <tr><td>51.</td><td>STAR CEMENT</td></tr>
+                            <tr><td>52.</td><td>NUVOCO VISTAS</td></tr>
+                            <tr><td>53.</td><td>SAGAR CEMENTS</td></tr>
+                            <tr><td>54.</td><td>HEIDELBERGCEMENT INDIA</td></tr>
+                            <tr><td>55.</td><td>ORIENT CEMENT</td></tr>
+                            <tr><td>56.</td><td>BANGUR CEMENT</td></tr>
+                            <tr><td>57.</td><td>KCP LIMITED</td></tr>
+                            <tr><td>58.</td><td>PENNA CEMENT</td></tr>
+                            <tr><td>59.</td><td>MY HOME INDUSTRIES</td></tr>
+                            <tr><td>60.</td><td>SRI CHAKRA CEMENTS</td></tr>
+                            <tr><td>61.</td><td>RAIN INDUSTRIES</td></tr>
+                            <tr><td>62.</td><td>ANDHRA CEMENTS</td></tr>
+                            <tr><td>63.</td><td>KEERTHI INDUSTRIES</td></tr>
+                            <tr><td>64.</td><td>BURNPUR CEMENT</td></tr>
+                            <tr><td>65.</td><td>SHIVA CEMENT</td></tr>
+                            <tr><td>66.</td><td>LOJIXS ENGINEERING</td></tr>
+                            <tr><td>67.</td><td>KPMG</td></tr>
+                            <tr><td>68.</td><td>EY (ERNST & YOUNG)</td></tr>
+                            <tr><td>69.</td><td>DELOITTE INDIA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="company-list-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SL.No.</th>
+                                <th>Name Of Company</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>70.</td><td>RCSM BUILDERS PVT LTD</td></tr>
+                            <tr><td>71.</td><td>NINA PERCEPT</td></tr>
+                            <tr><td>72.</td><td>KANINI SOFTWARES</td></tr>
+                            <tr><td>73.</td><td>NASIWAX SERVICES INDIA PRIVATE LIMITED</td></tr>
+                            <tr><td>74.</td><td>GE HEALTHCARE</td></tr>
+                            <tr><td>75.</td><td>SIEMENS HEALTHINEERS</td></tr>
+                            <tr><td>76.</td><td>PHILIPS HEALTHCARE</td></tr>
+                            <tr><td>77.</td><td>MEDTRONIC</td></tr>
+                            <tr><td>78.</td><td>JOHNSON & JOHNSON</td></tr>
+                            <tr><td>79.</td><td>ABBOTT LABORATORIES</td></tr>
+                            <tr><td>80.</td><td>ROCHE</td></tr>
+                            <tr><td>81.</td><td>NOVARTIS</td></tr>
+                            <tr><td>82.</td><td>PFIZER</td></tr>
+                            <tr><td>83.</td><td>MERCK & CO</td></tr>
+                            <tr><td>84.</td><td>GLAXOSMITHKLINE</td></tr>
+                            <tr><td>85.</td><td>ASTRAZENECA</td></tr>
+                            <tr><td>86.</td><td>ELI LILLY AND COMPANY</td></tr>
+                            <tr><td>87.</td><td>BRISTOL MYERS SQUIBB</td></tr>
+                            <tr><td>88.</td><td>GILEAD SCIENCES</td></tr>
+                            <tr><td>89.</td><td>AMGEN</td></tr>
+                            <tr><td>90.</td><td>BIOGEN</td></tr>
+                            <tr><td>91.</td><td>MODERNA</td></tr>
+                            <tr><td>92.</td><td>BIONTECH</td></tr>
+                            <tr><td>93.</td><td>SANOFI</td></tr>
+                            <tr><td>94.</td><td>DAIICHI SANKYO</td></tr>
+                            <tr><td>95.</td><td>TAKEDA PHARMACEUTICAL</td></tr>
+                            <tr><td>96.</td><td>EISAI CO</td></tr>
+                            <tr><td>97.</td><td>CHUBB</td></tr>
+                            <tr><td>98.</td><td>AIG</td></tr>
+                            <tr><td>99.</td><td>AXA</td></tr>
+                            <tr><td>100.</td><td>ALLIANZ</td></tr>
+                            <tr><td>101.</td><td>ZURICH INSURANCE GROUP</td></tr>
+                            <tr><td>102.</td><td>TRAVELERS</td></tr>
+                            <tr><td>103.</td><td>PROGRESSIVE CORP</td></tr>
+                            <tr><td>104.</td><td>GEICO</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+     
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="#" class="menu-item active" data-target="profile">Profile</a>
+      <a href="#" class="menu-item" data-target="vision">Vision and Mission</a>
+      <a href="#" class="menu-item" data-target="goals">Goals</a>
+      <a href="#" class="menu-item" data-target="statistics">Placement Statistics</a>
+      <a href="#" class="menu-item" data-target="topstudents">Students with Highest Packages</a>
+      <a href="#" class="menu-item" data-target="faculty">Faculty</a>
+      <a href="#" class="menu-item" data-target="training">Training Programs</a>
+      <a href="#" class="menu-item" data-target="yearwise">Yearwise Placements</a>
+      <a href="#" class="menu-item" data-target="contact">Contact</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <section id="profile" class="active">
+        <h2>Profile</h2>
+        <p>The Department of placement & training was established as a separate entity in the year 2004...</p>
+      </section>
+
+      <section id="vision">
+        <h2>Vision and Mission</h2>
+        <p>Our mission is to provide students with placement opportunities and career guidance...</p>
+      </section>
+
+      <section id="goals">
+        <h2>Goals</h2>
+        <ul>
+          <li>Improve placement quality</li>
+          <li>Enhance employability</li>
+          <li>Develop skills</li>
+        </ul>
+      </section>
+
+      <section id="statistics">
+        <h2>Placement Statistics</h2>
+        <p>Statistics will go here...</p>
+      </section>
+
+      <section id="topstudents">
+        <h2>Students with Highest Packages</h2>
+        <p>Top students details here...</p>
+      </section>
+
+      <section id="faculty">
+        <h2>Faculty</h2>
+        <p>Faculty profiles here...</p>
+      </section>
+
+      <section id="training">
+        <h2>Training Programs</h2>
+        <p>Training program information here...</p>
+      </section>
+
+      <section id="yearwise">
+        <h2>Yearwise Placements</h2>
+        <p>Year-wise placement record...</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: training@ksit.ac.in | Phone: +91-1234567890</p>
+      </section>
+    </div>
+  </div>
+
+
+
+
+
+
+<script>
+    // JavaScript to handle tab switching
+    const menuItems = document.querySelectorAll('.menu-item');
+    const sections = document.querySelectorAll('section');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Remove active class from all menu links
+        menuItems.forEach(i => i.classList.remove('active'));
+
+        // Add active class to clicked menu
+        this.classList.add('active');
+
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Show the selected section
+        const target = this.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+  
+</body>
+</html>
+
+
+

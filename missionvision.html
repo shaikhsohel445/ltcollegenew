@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vision & Mission - KSIT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navigation (same as index for consistency) -->
+  <nav class="bg-blue-900 p-4 text-white">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">KSIT</h1>
+      <ul class="flex space-x-6 items-center relative group">
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">About Us</button>
+          <!-- Dropdown -->
+          <ul class="absolute hidden group-hover:block bg-white text-black mt-2 py-2 shadow-lg rounded-md z-10 min-w-[180px]">
+            <li><a href="vision-mission.html" class="block px-4 py-2 hover:bg-gray-100">Vision & Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Vision & Mission Section -->
+  <section class="py-12 px-4 md:px-8">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Vision -->
+      <div class="bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-700">Vision</h2>
+        <p>
+          To impart quality technical education with ethical values, employable skills and research to achieve excellence.
+        </p>
+      </div>
+
+      <!-- Mission -->
+      <div class="bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-700">Mission</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>To attract and retain highly qualified, experienced and committed faculty.</li>
+          <li>To create relevant infrastructure.</li>
+          <li>Network with industry and premier institutions to encourage emergence of new ideas by providing research and development facilities to strive for academic excellence.</li>
+          <li>To inculcate the professional and ethical values among young students with employable skills and knowledge acquired to transform the society.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

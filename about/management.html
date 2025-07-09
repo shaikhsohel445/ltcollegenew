@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Management Committee</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 26px;
+      color: orange;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 0 20px 40px;
+    }
+
+    .card {
+      width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card .name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #002366;
+      margin-top: 12px;
+    }
+
+    .card .role {
+      font-size: 14px;
+      color: red;
+      margin-bottom: 16px;
+    }
+
+    .group-photo {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0 20px;
+    }
+
+    .group-photo img {
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 6px;
+    }
+
+    .description {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto 60px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .description h4 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffae00;
+      margin: 20px 0 10px;
+    }
+
+    .description h4::before {
+      content: "📸 ";
+    }
+
+    .description a {
+      color: #002366;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .description a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+
+      .group-photo img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 class="section-title">Management Committee Members</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="image/Samiksha.jpg" alt="President">
+      <div class="name">Sri. R. Rajagopal Naidu</div>
+      <div class="role">President</div>
+    </div>
+
+    <div class="card">
+      <img src="images/secretary.jpg" alt="Secretary">
+      <div class="name">Sri. R. Leela Shankar Rao</div>
+      <div class="role">Hon. Secretary</div>
+    </div>
+
+    <div class="card">
+      <img src="images/treasurer.jpg" alt="Treasurer">
+      <div class="name">Sri. T. Neerajakshulu</div>
+      <div class="role">Treasurer</div>
+    </div>
+  </div>
+
+  <div class="group-photo">
+    <img src="https://th.bing.com/th/id/OIP.-VqMrd4pYky21ixv3KQj5AHaDU?w=301&h=156&c=7&r=0&o=5&pid=1.7" alt="Management Group">
+  </div>
+
+  <div class="description">
+    <h4>Sitting From Left to Right:</h4>
+    <p>
+      <a>Sri. T. Neerajakshulu</a> (Treasurer),
+      <a>Sri. S. Venugopal Naidu</a> (Joint Secretary),
+      <a>Sri. B. Lokanadha Naidu</a> (Vice President),
+      <a>Sri. R. Rajagopal Naidu</a> (President),
+      <a>Dr. M. Rukmangada Naidu</a> (Vice President),
+      <a>Sri. R. Leela Shankar Rao</a> (Hon. Secretary),
+      <a>Sri. V. Rajendra Naidu</a> (Joint Secretary),
+      <a>Sri. M. Yogamurthy</a> (Internal Auditor)
+    </p>
+
+    <h4>Standing From Left to Right:</h4>
+    <p>
+      <a>Sri. V. Ramesh Kumar</a> (Director),
+      <a>Sri. J. M. Chandra Shekar</a> (Director),
+      <a>Sri. G. V. Ramesh</a> (Director),
+      <a>Sri. T. N. Manjunath</a> (Chairman, Environment Committee),
+      <a>Sri. D. Jagadish Kumar</a> (Chairman, Transport Committee),
+      <a>Sri. N. Krishnama Naidu</a> (Chairman, Hostel Committee),
+      <a>Sri. A. V. Nagaraj</a> (Chairman, Building Committee),
+      <a>Sri. N. M. Krishnamurthy</a> (Chairman, Finance Committee),
+      <a>Sri. G. Ramana Babu</a> (Director),
+      <a>Sri. M. Sudhakar</a> (Chairman, Legal Cell),
+      <a>Sri. P. Prabhakar Naidu</a> (Director)
+    </p>
+  </div>
+
+</body>
+</html>

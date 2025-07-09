@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Quality Assurance Cell (IQAC)</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Customizing Tailwind colors and font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        :root {
+            --color-dark-blue: #000080; /* A deep navy blue */
+            --color-light-blue: #0000b3; /* Slightly lighter for hover */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom utility classes for colors */
+        .bg-dark-blue {
+            background-color: var(--color-dark-blue);
+        }
+        .text-dark-blue {
+            color: var(--color-dark-blue);
+        }
+        .hover\:bg-light-blue:hover {
+            background-color: var(--color-light-blue);
+        }
+        .active-sidebar-item {
+            background-color: var(--color-light-blue);
+        }
+        /* Basic scrollbar styling for content area if needed */
+        .content-area {
+            max-height: calc(100vh - 100px); /* Adjust based on desired height, ensures scrollability */
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-6xl mx-auto">
+        <!-- Main content area -->
+        <div class="p-6">
+            <h1 class="text-3xl font-bold text-dark-blue text-center mb-8 pb-4 border-b-2 border-dark-blue">
+                Welcome To Internal Quality Assurance Cell (IQAC)
+            </h1>
+
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Sidebar Navigation -->
+                <div class="sidebar bg-dark-blue p-4 rounded-lg flex-shrink-0 w-full md:w-64">
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue active-sidebar-item" data-target="objective">
+                        Objective
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="committee">
+                        Committee
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="roles">
+                        Roles And Responsibilities
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="composition">
+                        Composition
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="minutes">
+                        Minutes Of Meeting
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="best-practices">
+                        Best Practices
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="annual-reports">
+                        Annual Reports
+                    </button>
+                    <button class="sidebar-item block w-full py-3 px-4 text-left text-white text-base font-semibold uppercase rounded-md mb-2 transition-colors duration-200 hover:bg-light-blue" data-target="other-reports">
+                        Other Reports
+                    </button>
+                </div>
+
+                <!-- Content Area -->
+                <div class="content-area flex-grow bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+                    <!-- Objective Content -->
+                    <div id="objective" class="content-pane block">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Objective (As Per NAAC)</h2>
+                        <p class="text-gray-700 mb-4">The primary aim of IQAC is:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>To develop a system for conscious, consistent, and catalytic action to improve the academic and administrative performance of the institution.</li>
+                            <li>To promote measures for institutional functioning towards quality enhancement through internalization of quality culture and institutionalization of best practices.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Committee Content (Placeholder) -->
+                    <div id="committee" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Committee</h2>
+                        <p class="text-gray-700">Details about the IQAC Committee members and their roles will be displayed here. This section will include information about the composition, responsibilities, and key members of the committee.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li>Chairperson: [Name]</li>
+                            <li>Coordinator: [Name]</li>
+                            <li>Members: [List of members]</li>
+                        </ul>
+                    </div>
+
+                    <!-- Roles and Responsibilities Content (Placeholder) -->
+                    <div id="roles" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Roles and Responsibilities</h2>
+                        <p class="text-gray-700">This section outlines the specific roles and responsibilities of the Internal Quality Assurance Cell (IQAC) within the institution. Key responsibilities include:</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li>Developing quality benchmarks.</li>
+                            <li>Facilitating the creation of a learner-centric environment.</li>
+                            <li>Collecting and analyzing feedback from stakeholders.</li>
+                            <li>Organizing workshops and seminars on quality-related themes.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Composition Content (Placeholder) -->
+                    <div id="composition" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Composition</h2>
+                        <p class="text-gray-700">The IQAC is composed of a diverse group of members representing various stakeholders of the institution to ensure comprehensive quality assurance. The typical composition includes:</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li>Head of the Institution (Chairperson)</li>
+                            <li>Senior administrative functionaries</li>
+                            <li>Teachers</li>
+                            <li>Members from the management</li>
+                            <li>Local society, students, and alumni</li>
+                        </ul>
+                    </div>
+
+                    <!-- Minutes of Meeting Content (Placeholder) -->
+                    <div id="minutes" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Minutes Of Meeting</h2>
+                        <p class="text-gray-700">Access to the minutes of the IQAC meetings will be provided here. These documents detail the discussions, decisions, and action plans formulated during the meetings.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li><a href="#" class="text-blue-600 hover:underline">Minutes - Meeting 1 (DD-MM-YYYY)</a></li>
+                            <li><a href="#" class="text-blue-600 hover:underline">Minutes - Meeting 2 (DD-MM-YYYY)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Best Practices Content (Placeholder) -->
+                    <div id="best-practices" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Best Practices</h2>
+                        <p class="text-gray-700">This section highlights the best practices adopted by the institution to enhance quality in various aspects of its operations, including teaching, research, and administration.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li>Innovative teaching methodologies.</li>
+                            <li>Student support initiatives.</li>
+                            <li>Research and development promotion.</li>
+                            <li>Community engagement programs.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Annual Reports Content (Placeholder) -->
+                    <div id="annual-reports" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Annual Reports</h2>
+                        <p class="text-gray-700">The annual quality assurance reports (AQARs) of the institution will be available for download in this section. These reports provide a comprehensive overview of the institution's quality initiatives and achievements over the academic year.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li><a href="#" class="text-blue-600 hover:underline">AQAR 2023-2024</a></li>
+                            <li><a href="#" class="text-blue-600 hover:underline">AQAR 2022-2023</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Other Reports Content (Placeholder) -->
+                    <div id="other-reports" class="content-pane hidden">
+                        <h2 class="text-2xl font-semibold text-dark-blue mb-4">Other Reports</h2>
+                        <p class="text-gray-700">Any other relevant reports, surveys, or documents related to quality assurance and institutional development will be listed here.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                            <li><a href="#" class="text-blue-600 hover:underline">Internal Audit Report (YYYY)</a></li>
+                            <li><a href="#" class="text-blue-600 hover:underline">Stakeholder Feedback Analysis (YYYY)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const contentPanes = document.querySelectorAll('.content-pane');
+
+            // Function to show a specific content pane and activate its sidebar item
+            const showContent = (targetId) => {
+                // Remove 'active-sidebar-item' class from all sidebar items
+                sidebarItems.forEach(item => item.classList.remove('active-sidebar-item'));
+
+                // Hide all content panes
+                contentPanes.forEach(pane => pane.classList.add('hidden'));
+
+                // Find the clicked sidebar item and add the 'active-sidebar-item' class
+                const activeItem = document.querySelector(`.sidebar-item[data-target="${targetId}"]`);
+                if (activeItem) {
+                    activeItem.classList.add('active-sidebar-item');
+                }
+
+                // Show the target content pane
+                const targetPane = document.getElementById(targetId);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                }
+            };
+
+            // Add click event listeners to sidebar items
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const targetId = item.dataset.target;
+                    showContent(targetId);
+                });
+            });
+
+            // Initially display the "Objective" content when the page loads
+            showContent('objective');
+        });
+    </script>
+</body>
+</html>

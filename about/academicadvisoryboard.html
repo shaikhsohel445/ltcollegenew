@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academic Advisory Board</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+    }
+
+    .board-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #d62828;
+      margin: 40px 0 30px;
+      letter-spacing: 1px;
+    }
+
+    .board-container {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+      padding: 0 20px 60px;
+    }
+
+    .member {
+      text-align: center;
+      width: 260px;
+    }
+
+    .member img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .member-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #002366;
+      margin-top: 10px;
+    }
+
+    .member-designation {
+      font-size: 14px;
+      color: #444;
+      margin-top: 4px;
+    }
+
+    .member-role {
+      font-size: 14px;
+      font-weight: 500;
+      color: red;
+      margin-top: 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .board-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .member {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 class="board-title">ACADEMIC ADVISORY BOARD</h2>
+
+  <div class="board-container">
+    <div class="member">
+      <img src="https://th.bing.com/th/id/OIP.3dCaxs7dL2vi1FTLTOuevQHaHa?w=181&h=181&c=7&r=0&o=5&pid=1.7" alt="Dr. H.P Khincha">
+      <div class="member-name">Dr. H.P Khincha</div>
+      <div class="member-designation">Former Vice Chancellor VTU and <br> Professor IISc</div>
+      <div class="member-role">Chairman</div>
+    </div>
+
+    <div class="member">
+      <img src="https://th.bing.com/th/id/OIP.2_HdwRQYNoPvfyx_X77ESAAAAA?w=159&h=201&c=7&r=0&o=5&pid=1.7" alt="Dr. K.N.B. Murthy">
+      <div class="member-name">Dr. K.N.B. Murthy</div>
+      <div class="member-designation">Vice Chancellor of PES University</div>
+      <div class="member-role">Member</div>
+    </div>
+  </div>
+
+</body>
+</html>

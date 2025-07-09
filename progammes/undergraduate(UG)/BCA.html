@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BCA Department - KSIT Style</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #06194C;
+      color: white;
+      padding-top: 10px;
+      height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 16px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      border-left: 4px solid transparent;
+      transition: background 0.3s, border-left 0.3s;
+      cursor: pointer;
+    }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #FEC600;
+      color: #000;
+      font-weight: bold;
+      border-left: 4px solid white;
+    }
+    .content {
+      flex: 1;
+      padding: 30px 40px;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    h2 {
+      color: #06194C;
+      border-bottom: 2px solid #06194C;
+      padding-bottom: 6px;
+      margin-top: 30px;
+    }
+    h3 {
+      color: #06194C;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #06194C;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .hod-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    .hod-container img {
+      border: 4px solid #06194C;
+      border-radius: 8px;
+      max-width: 200px;
+      height: auto;
+    }
+    .hod-text {
+      flex: 1;
+      min-width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <a class="tab-link active" data-tab="profile">PROFILE</a>
+    <a class="tab-link" data-tab="vision">VISION & MISSION, PEO, PSO & PO</a>
+    <a class="tab-link" data-tab="pedagogy">PEDAGOGY</a>
+    <a class="tab-link" data-tab="syllabus">SYLLABUS</a>
+    <a class="tab-link" data-tab="fdp">FDP</a>
+    <a class="tab-link" data-tab="achievers">ACHIEVERS</a>
+    <a class="tab-link" data-tab="gallery">GALLERY</a>
+    <a class="tab-link" data-tab="library">DEPARTMENTAL LIBRARY</a>
+    <a class="tab-link" data-tab="club">STUDENT CLUB</a>
+    <a class="tab-link" data-tab="internships">INTERNSHIPS & PROJECTS</a>
+    <a class="tab-link" data-tab="visits">INDUSTRIAL VISIT</a>
+    <a class="tab-link" data-tab="events">EVENTS</a>
+    <a class="tab-link" data-tab="eresources">E-RESOURCES</a>
+    <a class="tab-link" data-tab="mou">MOUs SIGNED</a>
+    <a class="tab-link" data-tab="others">OTHER DETAILS</a>
+  </div>
+
+  <div class="content">
+    <!-- PROFILE -->
+    <div class="section active" id="profile">
+      <h2>BCA Department Profile</h2>
+      <div class="hod-container">
+        <p>The Department of Computer Science & Design (CSD) is established in the year 2021.
+
+The current intake of the UG program is 60. The main focus of the department is to produce graduates with expertise in Computer Science and Design domain. The college is accredited by National Assessment and Accreditation Council (NAAC). The department has qualified, experienced & committed teaching faculty members with various specializations. Well-qualified faculties provide qualitative education. Due to the quality of teaching, the students of the department are the top performers in the university. The outcome-based education helps students to achieve excellence in academics.
+
+The department has well-equipped laboratories with state-of-the-art equipment and software tools. Active professional bodies like CSI, ISTE, IEI, and IEEE help to conduct FDPs and workshops for the faculties to comprehend and upgrade to the latest technologies.
+
+Activities such as technical conferences, hackathons, Coding Contests, Seminars, technical talks, guest lectures, and Workshops are carried out for the students under professional bodies and department clubs to boost their technical skills and knowledge. These events provide the students to interact with industry professionals and hone up their skills. This helps the students to analyze real-life problems and increases their eagerness to develop solutions for the same.
+
+Head Of The Department Desk</p>
+        <img src="https://th.bing.com/th/id/OIP.j0y7W-7eHBFucruFnjsa5gHaFE?w=250&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="HOD Photo">
+        <div class="hod-text">
+          <h3>Dr. [samiksha bari ]</h3>
+          <p style="margin: 0; font-weight: bold;">Head of the Department – BCA</p>
+          <p style="margin-top: 10px; line-height: 1.6;">
+            Welcome to the Department of Computer Applications (BCA) The Department of Computer Science & Design offers B.E program. The department has well-qualified, knowledgeable, and dedicated faculty to provide qualitative, Industry tuned education to students. The department organizes various events like workshops, technical talks for students to interact with Industry Professionals and hone up their skills. This empowers them to think beyond regular course curriculum and possibly instill in them the concept to start on entrepreneurial journey.
+
+Department staff and students are members of Professional bodies like ISTE, IEI, CSI & IEEE. The department club encourages showcasing student's talent in programming, debugging, teamwork and enhances their skills.
+          </p>
+
+          <!-- PROFILE -->
+<div class="section active" id="profile">
+  <h2>BCA Department Profile</h2>
+
+  <!-- HOD Info -->
+  <div class="hod-container">
+    <img src="https://via.placeholder.com/200x250" alt="HOD Photo">
+    <div class="hod-text">
+      <h3 style="color: red;">Professor & Head</h3>
+      <p style="color: #06194C; font-weight: bold; font-size: 18px;">B.E, M.Tech, Ph.D</p>
+    </div>
+  </div>
+
+  <!-- UG Program -->
+  <h2 style="margin-top: 30px;">UG Program :</h2>
+  <p>
+    Bachelor of Computer Applications (B.C.A) is a 3-year undergraduate degree program offered under the Department of Computer Applications. The department has an approved intake of 60 students with a provision for 10% lateral entry in the second year for eligible diploma holders.
+  </p>
+
+  <!-- Highlights -->
+  <h2>Highlights Of The Department:</h2>
+  <ul>
+    <li>Experienced and dedicated faculty with strong academic and industry backgrounds</li>
+    <li>Well-equipped computer laboratories with the latest hardware and software</li>
+    <li>Smart classrooms and high-speed internet facilities</li>
+    <li>Focus on student development through seminars, workshops, and coding contests</li>
+    <li>Guest lectures and training sessions from industry professionals</li>
+    <li>Exposure to trending technologies such as AI, IoT, and Data Analytics</li>
+  </ul>
+
+  <!-- Career Opportunities -->
+  <h2>Career Opportunities :</h2>
+  <p>
+    The BCA program opens a wide range of career paths in IT and related industries. Graduates can pursue roles such as:
+  </p>
+  <ul>
+    <li>Software Developer / Programmer</li>
+    <li>Web Developer / Frontend Engineer</li>
+    <li>Database Administrator</li>
+    <li>System Analyst</li>
+    <li>Mobile App Developer</li>
+    <li>UI/UX Designer</li>
+    <li>Opportunities in Animation, Gaming, Augmented/Virtual Reality, etc.</li>
+  </ul>
+  <p>
+    Students may also choose to pursue higher studies like MCA, M.Sc (CS), or enter competitive exams for government and research opportunities.
+  </p>
+</div>
+
+          
+        </div>
+      </div>
+      <h3 style="margin-top: 40px;">Department Overview</h3>
+      <p>The BCA program is designed to provide a solid foundation in computing principles, programming, databases, and software engineering with industry relevance.</p>
+    </div>
+
+    <!-- VISION -->
+    <div class="section" id="vision">
+      <h2>Vision</h2>
+      <p>To prepare skilled and distinct professionals in Computer Applications with ethical values and research capabilities.</p>
+      <h2>Mission</h2>
+      <ul>
+        <li>Build a strong academic foundation in computing concepts.</li>
+        <li>Encourage innovation and research in the software domain.</li>
+        <li>Foster social responsibility and lifelong learning.</li>
+      </ul>
+      <h2>Program Educational Objectives (PEOs)</h2>
+      <ul>
+        <li><span class="highlight">PEO1:</span> Develop programming and analytical skills.</li>
+        <li><span class="highlight">PEO2:</span> Enable higher studies and industry readiness.</li>
+        <li><span class="highlight">PEO3:</span> Promote ethical and socially responsible professionals.</li>
+      </ul>
+      <h2>Program Specific Outcomes (PSOs)</h2>
+      <ul>
+        <li><span class="highlight">PSO1:</span> Apply programming concepts in real-world software development.</li>
+        <li><span class="highlight">PSO2:</span> Use modern computing tools and techniques.</li>
+      </ul>
+      <h2>Program Outcomes (POs)</h2>
+      <ul>
+        <li><span class="highlight">PO1:</span> Knowledge of computing fundamentals.</li>
+        <li><span class="highlight">PO2:</span> Analyze problems and design solutions.</li>
+        <li><span class="highlight">PO3:</span> Effective use of modern IT tools.</li>
+        <li><span class="highlight">PO4:</span> Awareness of societal and ethical responsibilities.</li>
+      </ul>
+    </div>
+
+    <!-- Remaining Sections -->
+    <div class="section" id="pedagogy"><h2>Pedagogy</h2><p>Live coding, flipped classrooms, and mini-projects are used for active learning.</p></div>
+    <div class="section" id="syllabus"><h2>Syllabus</h2><p><a href="#">Download Latest BCA Syllabus (PDF)</a></p></div>
+    <div class="section" id="fdp"><h2>Faculty Development Programmes (FDP)</h2><p>Faculty members actively participate in FDPs and workshops on emerging tech.</p></div>
+    <div class="section" id="achievers"><h2>Achievers</h2><p>Our students have won hackathons, coding contests, and placement accolades.</p></div>
+    <div class="section" id="gallery"><h2>Gallery</h2><p>Photos from seminars, workshops, and fests are displayed here.</p></div>
+    <div class="section" id="library"><h2>Departmental Library</h2><p>We maintain a mini-library with key programming and tech books.</p></div>
+    <div class="section" id="club"><h2>Student Club</h2><p>The Coding Club conducts weekly sessions, competitions, and peer learning.</p></div>
+    <div class="section" id="internships"><h2>Internships & Projects</h2><p>Students engage in internships with IT companies and submit mini-projects.</p></div>
+    <div class="section" id="visits"><h2>Industrial Visit</h2><p>Regular visits to tech companies to understand real-time software development.</p></div>
+    <div class="section" id="events"><h2>Events</h2><p>Annual tech fests, webinars, coding competitions are conducted regularly.</p></div>
+    <div class="section" id="eresources"><h2>E-Resources</h2><p>Access to NPTEL, Coursera, LinkedIn Learning, and coding platforms.</p></div>
+    <div class="section" id="mou"><h2>MOUs Signed</h2><p>MOUs with Infosys, IBM, and local startups for training and placement support.</p></div>
+    <div class="section" id="others"><h2>Other Details</h2><p>Placement stats, curriculum structure, lab info, and alumni network available here.</p></div>
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-link');
+  const sections = document.querySelectorAll('.section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
