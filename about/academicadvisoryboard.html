@@ -10,6 +10,7 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #fff;
+      color: #333;
     }
 
     .board-title {
@@ -62,6 +63,32 @@
       margin-top: 4px;
     }
 
+    .academic-section {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+
+    .academic-section h2 {
+      font-size: 26px;
+      color: #002366;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      text-align: center;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+    }
+
+    .academic-section ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #d62828;
+    }
+
     @media screen and (max-width: 768px) {
       .board-container {
         flex-direction: column;
@@ -92,6 +119,26 @@
       <div class="member-designation">Vice Chancellor of PES University</div>
       <div class="member-role">Member</div>
     </div>
+  </div>
+
+  <div class="academic-section">
+    <h2>Academic Programs Offered</h2>
+    <ul>
+      <li><strong>Bachelor of Arts (B.A.):</strong> 3-year undergraduate degree</li>
+      <li><strong>Bachelor of Commerce (B.Com.):</strong> 3-year undergraduate degree</li>
+      <li><strong>Bachelor of Science (B.Sc.):</strong> 3-year undergraduate degree</li>
+      <li><strong>Bachelor of Computer Applications (BCA):</strong> 3-year program in Computer and Management</li>
+      <li><strong>Master of Library & Information Science (M.Lib.):</strong> 2-year postgraduate degree</li>
+    </ul>
+
+    <h2>Academic Policies & Requirements</h2>
+    <ul>
+      <li>Semester system implemented from the academic year 2009–2010 for all faculties.</li>
+      <li>In the Arts faculty, students must choose three optional subjects from different groups in the first year, which remain unchanged till the final year.</li>
+      <li>In the final (third) year, students must select one optional subject as their Honors specialization.</li>
+      <li><span class="highlight">Compulsory Computer Training:</span> All students who do not have Computer Science as a subject must complete a 100-hour certified computer literacy training within the 3 years.</li>
+      <li><span class="highlight">Compulsory Environmental Studies:</span> All B.A., B.Com., and B.Sc. students must complete a 100-mark Environmental Studies course within their degree period. Failure to complete it will result in disqualification from the final-year university examination.</li>
+    </ul>
   </div>
 
 </body>
