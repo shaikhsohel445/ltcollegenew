@@ -4,48 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Principal's Message - KSIT</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    /* Page Layout */
+    .page-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .message-box {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      max-width: 1100px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .message-box {
+        flex-direction: row;
+        padding: 40px 50px;
+      }
+    }
+
+    /* Image Section */
+    .principal-image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .principal-image img {
+      width: 100%;
+      max-width: 280px;
+      height: 380px; /* Increased height */
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .principal-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* Text Section */
+    .message-content {
+      width: 100%;
+    }
+
+    .message-content h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .message-content h2 {
+      font-size: 1.25rem;
+      color: #1d4ed8;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .message-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 16px;
+    }
+
+    .message-content .signed {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #111827;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
+  <div class="page-container">
+    <div class="message-box">
 
- 
-    <div class="max-w-7xl mx-auto px-4">
-      <h1 class="text-3xl font-bold">Principal's Message</h1>
-    </div>
- 
-
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto py-12 px-4 md:px-8">
-    <div class="bg-white shadow-md rounded-lg p-6 md:flex md:items-start space-y-6 md:space-y-0 md:space-x-8">
-
-      <!-- Image of Principal -->
-      <div class="flex-shrink-0">
-        <img src="principal.jpg" alt="Principal Photo" class="w-64 h-auto rounded-md shadow-md">
-        <!-- Replace principal.jpg with your image filename -->
+      <!-- Left: Principal Image -->
+      <div class="principal-image">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhG7fj13KSkme3TofdrdKJQiEOey25JNDW33pe8LlwjRtCyRki6yWHTvvZXqsqby6xKpGrEhsuwPIKEXfmapi4hZPHWulJZihMBdv83m2LsexL788kOQA68LM287WHvYWXDttLpbnutxYk/s1600/%25E0%25A4%2585%25E0%25A4%25AD%25E0%25A4%25BE%25E0%25A4%25AF%25E0%25A5%258D%25E0%25A4%25B8%25E0%25A5%258D%25E0%25A4%25A4%25E0%25A5%258D%25E0%25A4%25B0.jpg" alt="Principal Photo">
+        <p class="principal-name">Dr. Vijay Sharma</p>
       </div>
 
-      <!-- Principal's Message Content -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Message from the Principal</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Welcome to KSIT — a place where education meets innovation. At our institution, we strive to provide a dynamic
+      <!-- Right: Message Content -->
+      <div class="message-content">
+        <h1>Principal's Message</h1>
+        <h2>Message from the Principal</h2>
+        <p>
+          Welcome to LT — a place where education meets innovation. At our institution, we strive to provide a dynamic
           learning environment that fosters intellectual curiosity and practical knowledge.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p>
           Our dedicated faculty, state-of-the-art infrastructure, and student-centric approach ensure that every learner
           gets the best possible platform to excel academically and professionally.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p>
           We are committed to producing technically competent, socially responsible, and ethically strong graduates who can
           contribute meaningfully to the society and industry.
         </p>
-
-        <p class="font-bold text-gray-800 mt-6">- Principal, KSIT</p>
+        <p class="signed">- Principal, LT</p>
       </div>
 
     </div>
-  </main>
+  </div>
 
 </body>
 </html>

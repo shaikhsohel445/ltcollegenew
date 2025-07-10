@@ -1,530 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departmental Library</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons (optional, but good for achievement badges) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Custom font import for Inter */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Top Banner Image Styles */
-        .top-banner {
-            width: 100%;
-            height: 350px;
-            /* Adjusted height to match screenshot visually */
-            background-image: url('https://placehold.co/1200x350/3498db/ffffff?text=Library+Main+Image');
-            /* Placeholder image, replace with your actual library image */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            /* Align text to the bottom */
-            justify-content: flex-end;
-            /* Align text to the right */
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .banner-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Semi-transparent background for readability */
-            padding: 8px 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            /* Adjust margin to match screenshot */
-            margin-right: 20px;
-        }
-
-        /* Specific styles for the sidebar to match screenshot */
-        .sidebar-nav a {
-            padding: 12px 16px;
-            /* Adjust padding for links */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            /* Separator lines */
-        }
-
-        .sidebar-nav li:last-child a {
-            border-bottom: none;
-            /* No border for the last item */
-        }
-
-        /* Dark blue background for active link */
-        .sidebar-nav a.active-link {
-            background-color: #1a568a;
-            /* Darker blue for active link */
-            font-weight: 600;
-            /* Bolder text for active link */
-        }
-
-        /* Profile section specific styles */
-        .profile-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .profile-card img {
-            border-radius: 50%;
-            border: 4px solid #3b82f6;
-            /* Blue border around image */
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .profile-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 5px;
-        }
-
-        .profile-card p {
-            color: #4b5563;
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .profile-description {
-            background-color: #f9fafb;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .profile-description p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            color: #374151;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departmental Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .sidebar-nav a { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .sidebar-nav li:last-child a { border-bottom: none; }
+    .sidebar-nav a.active-link { background-color: #0c1a52; font-weight: 600; }
+    .sidebar-nav a:hover { background-color: #102054; }
+    .profile-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .profile-card img {
+      border-radius: 50%;
+      border: 4px solid #002366;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .profile-description {
+      background-color: #f9fafb;
+      border-left: 4px solid #002366;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .profile-description p { margin-bottom: 10px; line-height: 1.6; color: #374151; }
+  </style>
 </head>
-
 <body class="bg-gray-100 text-gray-800 antialiased flex flex-col min-h-screen">
 
-    <!-- Top Banner Image Section -->
-    <div class="top-banner">
-        <span class="banner-text">"Welcome to Library and Information Centre."</span>
-    </div>
+  <div class="flex flex-1 container mx-auto mt-4 p-4 sm:p-6 lg:p-8 bg-white rounded-lg shadow-lg">
 
-    <!-- Main Content Area with Sidebar -->
-    <div class="flex flex-1 container mx-auto mt-4 p-4 sm:p-6 lg:p-8 bg-white rounded-lg shadow-lg">
-        <!-- Sidebar Navigation (Matching Screenshot) -->
-        <aside class="w-64 bg-blue-700 text-white rounded-lg p-4 shadow-md mr-6 flex-shrink-0">
-            <h3 class="text-xl font-semibold mb-4 border-b border-blue-500 pb-2">PROFILE</h3>
-            <!-- Changed title to PROFILE -->
-            <ul class="space-y-0 sidebar-nav">
-                <li>
-                    <a href="#" id="nav-profile"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium active-link">
-                        PROFILE
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-vision-mission"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        VISION & MISSION
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-timings"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        TIMINGS
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-collections"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        COLLECTIONS
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-services-facilities"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        SERVICES / FACILITIES
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-infrastructure"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        INFRASTRUCTURE
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-staff"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        STAFF
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-gallery"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        GALLERY
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-e-resources"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        E-RESOURCES
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-iqac"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        IQAC
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-course-materials"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        COURSE MATERIALS
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-publications"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        PUBLICATIONS
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-links"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        LINKS
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="nav-other-details"
-                        class="block p-3 rounded-md hover:bg-blue-600 transition-colors duration-200 font-medium">
-                        OTHER DETAILS
-                    </a>
-                </li>
-            </ul>
-        </aside>
+    <aside class="w-64 bg-[#0c1a52] text-white rounded-lg p-4 shadow-md mr-6 flex-shrink-0">
+      <h3 class="text-xl font-semibold mb-4 border-b border-blue-500 pb-2">PROFILE</h3>
+      <ul class="space-y-0 sidebar-nav">
+        <li><a href="#" id="nav-profile" class="block p-3 rounded-md font-medium active-link">PROFILE</a></li>
+        <li><a href="#" id="nav-vision-mission" class="block p-3 rounded-md font-medium">VISION & MISSION</a></li>
+        <li><a href="#" id="nav-timings" class="block p-3 rounded-md font-medium">TIMINGS</a></li>
+        <li><a href="#" id="nav-collections" class="block p-3 rounded-md font-medium">COLLECTIONS</a></li>
+        <li><a href="#" id="nav-services-facilities" class="block p-3 rounded-md font-medium">SERVICES / FACILITIES</a></li>
+        <li><a href="#" id="nav-infrastructure" class="block p-3 rounded-md font-medium">INFRASTRUCTURE</a></li>
+        <li><a href="#" id="nav-staff" class="block p-3 rounded-md font-medium">STAFF</a></li>
+        <li><a href="#" id="nav-gallery" class="block p-3 rounded-md font-medium">GALLERY</a></li>
+        <li><a href="#" id="nav-e-resources" class="block p-3 rounded-md font-medium">E-RESOURCES</a></li>
+        <li><a href="#" id="nav-iqac" class="block p-3 rounded-md font-medium">IQAC</a></li>
+        <li><a href="#" id="nav-course-materials" class="block p-3 rounded-md font-medium">COURSE MATERIALS</a></li>
+        <li><a href="#" id="nav-publications" class="block p-3 rounded-md font-medium">PUBLICATIONS</a></li>
+        <li><a href="#" id="nav-links" class="block p-3 rounded-md font-medium">LINKS</a></li>
+        <li><a href="#" id="nav-other-details" class="block p-3 rounded-md font-medium">OTHER DETAILS</a></li>
+      </ul>
+    </aside>
 
-        <!-- Main Content Area -->
-        <main id="main-content-display" class="flex-1 p-4 bg-gray-50 rounded-lg shadow-inner">
-            <!-- Content will be loaded here dynamically based on sidebar clicks -->
-            <!-- Initial content will be the Profile section -->
-        </main>
-    </div>
+    <main id="main-content-display" class="flex-1 p-4 bg-gray-50 rounded-lg shadow-inner"></main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mainContentDisplay = document.getElementById('main-content-display');
-            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+  </div>
 
-            // Define content for each section
-            const contentSections = {
-                'profile': `
-    <div class="text-center mb-8">
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2">
-        Profile
-      </h1>
-      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-        Head Of The Department Desk
-      </p>
-    </div>
-    <div class="profile-card">
-      <img src="https://placehold.co/120x120/E0E0E0/333333?text=Dr.+XYZ" alt="Dr. XYZ">
-      <h3 class="text-xl font-semibold">Dr. XYZ</h3>
-      <p class="text-blue-700">Head, Library and Information Centre</p>
-      <p class="text-gray-600 text-sm">M.Lib., M.Phil., Ph.D</p>
-    </div>
-    <div class="profile-description">
-      <p>
-        The library at Lokmanya Tilak College, Sevli is a vital hub of academic resources and knowledge. It serves as a key support system for the institution's educational and research initiatives, fostering intellectual development and academic excellence.
-      </p>
-      <p>
-        Spread across a spacious area with dedicated reading zones and digital access points, the library houses a rich collection of books, journals, e-resources, and academic materials. It also supports a digital repository for seamless access to institutional materials.
-      </p>
-      <p>
-        With a focus on modern learning, the library is automated with library software and features an Online Public Access Catalogue (OPAC), making searching and borrowing highly efficient.
-      </p>
-    </div>
-  `,
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const main = document.getElementById('main-content-display');
+      const links = document.querySelectorAll('.sidebar-nav a');
+      const sections = {
+        'profile': `
+          <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4">Profile</h1>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">Head Of The Department Desk</p>
+          </div>
+          <div class="profile-card">
+            <img src="https://th.bing.com/th/id/OIP.Jz10N_W1SOv6hpHJMlJUtQHaED?w=292&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Dr. XYZ">
+            <h3 class="text-xl font-semibold">Dr. XYZ</h3>
+            <p class="text-blue-700">Head, Library and Information Centre</p>
+            <p class="text-gray-600 text-sm">M.Lib., M.Phil., Ph.D</p>
+          </div>
+          <div class="profile-description">
+            <p>The library at Lokmanya Tilak College, Sevli is a vital hub of academic resources and knowledge. It serves as a key support system for the institution's educational and research initiatives, fostering intellectual development and academic excellence.</p>
+            <p>Spread across a spacious area with dedicated reading zones and digital access points, the library houses a rich collection of books, journals, e-resources, and academic materials. It also supports a digital repository for seamless access to institutional materials.</p>
+            <p>With a focus on modern learning, the library is automated with library software and features an Online Public Access Catalogue (OPAC), making searching and borrowing highly efficient.</p>
+          </div>
+        `,
+        'vision-mission': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Vision & Mission</h1>
+          <p class="text-lg text-gray-700 mb-4"><strong>Vision:</strong> To empower learners by providing a dynamic academic environment enriched with knowledge, innovation, and lifelong learning opportunities.</p>
+          <p class="text-lg text-gray-700 mb-4"><strong>Mission:</strong> To offer inclusive, resource-rich, and accessible library services that foster academic growth, research excellence, and digital literacy.</p>
+        `,
+        'timings': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Timings</h1>
+          <p class="text-lg text-gray-700 mb-4">Library working hours:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Monday - Friday: 9:30 AM - 6:00 PM</li>
+            <li>Saturday: 9:30 AM - 1:30 PM</li>
+            <li>Sunday & Public Holidays: Closed</li>
+          </ul>
+          <p class="mt-4 text-gray-700">Extended timings during exam periods may be announced in advance.</p>
+        `,
+        'collections': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Collections</h1>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Course Textbooks & Reference Books</li>
+            <li>Academic Journals & Periodicals</li>
+            <li>Thesis & Project Reports</li>
+            <li>Competitive Exam Materials</li>
+            <li>E-books & Digital Journals</li>
+            <li>Previous Year Question Papers</li>
+          </ul>
+        `,
+        'services-facilities': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Services / Facilities</h1>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Book Lending & Circulation</li>
+            <li>Digital Library with Internet Access</li>
+            <li>Reference & Research Assistance</li>
+            <li>Reprography (Photocopying & Printing)</li>
+            <li>OPAC Search Facility</li>
+            <li>Reading Hall & Group Study Space</li>
+          </ul>
+        `,
+        'infrastructure': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Infrastructure</h1>
+          <p class="text-lg text-gray-700 mb-4">The library is designed to provide a comfortable and resourceful environment:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Ground Floor: Issue/Return Counter, Stack Area, New Arrivals</li>
+            <li>First Floor: Reading Area, Digital Resource Centre, Journals Section</li>
+          </ul>
+          <div class="mt-6 text-center"><img src="https://placehold.co/600x350/E0E0E0/333333?text=Library+View" alt="Library Infrastructure" class="rounded-lg shadow-md mx-auto"></div>
+        `,
+        'staff': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Library Staff</h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+              <img src="https://th.bing.com/th/id/OIP.IKZZhD219aLhsOpBSpXQOwΗHa?w=185&h=186" alt="Chief Librarian" class="rounded-full w-24 h-24 mx-auto mb-3 object-cover">
+              <h3 class="text-xl font-semibold text-gray-900">Dr. XYZ</h3>
+              <p class="text-blue-700">Chief Librarian</p>
+              <p class="text-gray-600 text-sm">Ph.D in Library Science</p>
+            </div>
+            <div class="bg_WHITE rounded-lg shadow-md p-4 text-center">
+              <img src="https://th.bing.com/th?q=Library+Staff+About+Us+Page&w=120&h=120" alt="Library Assistant" class="rounded-full w-24 h-24 mx-auto mb-3 object-cover">
+              <h3 class="text-xl font-semibold text-gray-900">Ms. A. Jadhav</h3>
+              <p class="text_BLUE-700">Library Assistant</p>
+              <p class="text-gray-600 text-sm">B.Lib. & Information Science</p>
+            </div>
+          </div>
+        `,
+        'gallery': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Library Gallery</h1>
+          <p class="text-lg text-gray-700 mb-6 text-center">Explore our library and its learning spaces.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="https://th.bing.com/th/id/OIP.WkfLR5ljBkJhuSM1TTnhIAHaFS" alt="Reading Zone" class="rounded shadow-md">
+            <img src="https://th.bing.com/th/id/OIP.g9D2GWyLDwZ8kEQxoR5dEQHaFj" alt="Digital Library" class="rounded shadow-md">
+            <img src="https://th.bing.com/th/id/OIP.JT3b7ZyIy4gF_L5Zqc-hdQHaFW" alt="Books Corner" class="rounded shadow-md">
+          </div>
+        `,
+        'e-resources': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">E-Resources</h1>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>NPTEL & SWAYAM video lectures</li>
+            <li>National Digital Library of India (NDLI)</li>
+            <li>Shodhganga Research Repository</li>
+            <li>Online journals (INFLIBNET)</li>
+          </ul>
+        `,
+        'iqac': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">IQAC (Library)</h1>
+          <p class="text-gray-700 mb-3">The library's IQAC cell ensures continuous service improvement, student feedback integration, and regular monitoring of resources.</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Quality assessment of resources</li>
+            <li>Annual performance tracking</li>
+            <li>User satisfaction initiatives</li>
+          </ul>
+        `,
+        'course-materials': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Course Materials</h1>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Semester-wise Lecture Notes</li>
+            <li>Sample Question Papers</li>
+            <li>Recommended Books List</li>
+          </ul>
+          <p class="text-gray-600 mt-4">Contact the library staff for access to physical and digital copies.</p>
+        `,
+        'publications': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Publications</h1>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Faculty Publications</li>
+            <li>Annual Reports</li>
+            <li>Library Bulletin / Newsletters</li>
+          </ul>
+        `,
+        'links': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Useful Links</h1>
+          <ul class="list-disc list-inside text-blue-700 space-y-2">
+            <li><a href="https://ugc.ac.in/" target="_blank">UGC</a></li>
+            <li><a href="https://swayam.gov.in/" target="_blank">SWAYAM</a></li>
+            <li><a href="https://ndl.iitkgp.ac.in/" target="_blank">NDLI</a></li>
+            <li><a href="https://shodhganga.inflibnet.ac.in/" target="_blank">Shodhganga</a></li>
+          </ul>
+        `,
+        'other-details': `
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Other Details</h1>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Library Events and Celebrations</li>
+            <li>Book Donation Drives</li>
+            <li>Readers' Club Activities</li>
+            <li>Digital Awareness Campaigns</li>
+          </ul>
+        `
+      };
 
-                'vision-mission': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2 text-center">
-      Vision & Mission
-    </h1>
-    <p class="text-lg text-gray-700 mb-4">
-      <strong>Vision:</strong> To empower learners by providing a dynamic academic environment enriched with knowledge, innovation, and lifelong learning opportunities.
-    </p>
-    <p class="text-lg text-gray-700 mb-4">
-      <strong>Mission:</strong> To offer inclusive, resource-rich, and accessible library services that foster academic growth, research excellence, and digital literacy.
-    </p>
-  `,
-
-                'timings': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2 text-center">
-      Timings
-    </h1>
-    <p class="text-lg text-gray-700 mb-4">
-      Library working hours:
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Monday - Friday: 9:30 AM - 6:00 PM</li>
-      <li>Saturday: 9:30 AM - 1:30 PM</li>
-      <li>Sunday & Public Holidays: Closed</li>
-    </ul>
-    <p class="mt-4 text-gray-700">
-      Extended timings during exam periods may be announced in advance.
-    </p>
-  `,
-
-                'collections': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2 text-center">
-      Collections
-    </h1>
-    <p class="text-lg text-gray-700 mb-4">
-      The library collection includes:
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Course Textbooks & Reference Books</li>
-      <li>Academic Journals & Periodicals</li>
-      <li>Thesis & Project Reports</li>
-      <li>Competitive Exam Materials</li>
-      <li>E-books & Digital Journals</li>
-      <li>Previous Year Question Papers</li>
-    </ul>
-  `,
-
-                'services-facilities': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2 text-center">
-      Services / Facilities
-    </h1>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Book Lending & Circulation</li>
-      <li>Digital Library with Internet Access</li>
-      <li>Reference & Research Assistance</li>
-      <li>Reprography (Photocopying & Printing)</li>
-      <li>OPAC Search Facility</li>
-      <li>Reading Hall & Group Study Space</li>
-    </ul>
-  `,
-
-                'infrastructure': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2 text-center">
-      Infrastructure
-    </h1>
-    <p class="text-lg text-gray-700 mb-4">
-      The library is designed to provide a comfortable and resourceful environment:
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Ground Floor: Issue/Return Counter, Stack Area, New Arrivals</li>
-      <li>First Floor: Reading Area, Digital Resource Centre, Journals Section</li>
-    </ul>
-    <div class="mt-6 text-center">
-      <img src="https://placehold.co/600x350/E0E0E0/333333?text=Library+View" alt="Library Infrastructure" class="rounded-lg shadow-md mx-auto">
-    </div>
-  `,
-
-                'staff': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 rounded-lg p-2 text-center">
-      Library Staff
-    </h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-lg shadow-md p-4 text-center">
-        <img src="https://placehold.co/100x100/E0E0E0/333333?text=Dr.+XYZ" alt="Chief Librarian" class="rounded-full w-24 h-24 mx-auto mb-3 object-cover">
-        <h3 class="text-xl font-semibold text-gray-900">Dr. XYZ</h3>
-        <p class="text-blue-700">Chief Librarian</p>
-        <p class="text-gray-600 text-sm">Ph.D in Library Science</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-4 text-center">
-        <img src="https://placehold.co/100x100/E0E0E0/333333?text=Assistant" alt="Library Assistant" class="rounded-full w-24 h-24 mx-auto mb-3 object-cover">
-        <h3 class="text-xl font-semibold text-gray-900">Ms. A. Jadhav</h3>
-        <p class="text-blue-700">Library Assistant</p>
-        <p class="text-gray-600 text-sm">B.Lib. & Information Science</p>
-      </div>
-    </div>
-  `,
-
-                'gallery': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">Library Gallery</h1>
-    <p class="text-lg text-gray-700 mb-6 text-center">
-      Explore our library and its learning spaces.
-    </p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="https://placehold.co/300x200?text=Reading+Zone" alt="Reading Zone" class="rounded shadow-md">
-      <img src="https://placehold.co/300x200?text=Digital+Library" alt="Digital Library" class="rounded shadow-md">
-      <img src="https://placehold.co/300x200?text=Books+Corner" alt="Books Corner" class="rounded shadow-md">
-    </div>
-  `,
-
-                'e-resources': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">
-      E-Resources
-    </h1>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>NPTEL & SWAYAM video lectures</li>
-      <li>National Digital Library of India (NDLI)</li>
-      <li>Shodhganga Research Repository</li>
-      <li>Online journals (INFLIBNET)</li>
-    </ul>
-  `,
-
-                'iqac': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">
-      IQAC (Library)
-    </h1>
-    <p class="text-gray-700 mb-3">
-      The library's IQAC cell ensures continuous service improvement, student feedback integration, and regular monitoring of resources.
-    </p>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Quality assessment of resources</li>
-      <li>Annual performance tracking</li>
-      <li>User satisfaction initiatives</li>
-    </ul>
-  `,
-
-                'course-materials': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">
-      Course Materials
-    </h1>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Semester-wise Lecture Notes</li>
-      <li>Sample Question Papers</li>
-      <li>Recommended Books List</li>
-    </ul>
-    <p class="text-gray-600 mt-4">
-      Contact the library staff for access to physical and digital copies.
-    </p>
-  `,
-
-                'publications': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">
-      Publications
-    </h1>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Faculty Publications</li>
-      <li>Annual Reports</li>
-      <li>Library Bulletin / Newsletters</li>
-    </ul>
-  `,
-
-                'links': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">
-      Useful Links
-    </h1>
-    <ul class="list-disc list-inside text-blue-700 space-y-2">
-      <li><a href="https://ugc.ac.in/" target="_blank">UGC</a></li>
-      <li><a href="https://swayam.gov.in/" target="_blank">SWAYAM</a></li>
-      <li><a href="https://ndl.iitkgp.ac.in/" target="_blank">NDLI</a></li>
-      <li><a href="https://shodhganga.inflibnet.ac.in/" target="_blank">Shodhganga</a></li>
-    </ul>
-  `,
-
-                'other-details': `
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 mb-4 text-center">
-      Other Details
-    </h1>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Library Events and Celebrations</li>
-      <li>Book Donation Drives</li>
-      <li>Readers' Club Activities</li>
-      <li>Digital Awareness Campaigns</li>
-    </ul>
-  `
-            };
-
-            // Function to load content based on clicked link
-            function loadSection(sectionId) {
-                mainContentDisplay.innerHTML = contentSections[sectionId] || `<h2 class="text-3xl font-bold text-gray-700 text-center">Content for "${sectionId}" not found.</h2>`;
-
-                // Re-initialize carousel if the loaded section is 'gallery'
-                // Note: The main library image is now a static banner, not part of a carousel.
-                if (sectionId === 'gallery') {
-                    // Ensure carousel elements exist before trying to manipulate them
-                    const carouselSlides = document.getElementsByClassName("carousel-slide");
-                    if (carouselSlides.length > 0) {
-                        slideIndex = 0; // Reset slide index for gallery
-                        // A small delay to ensure DOM elements are rendered before initializing carousel
-                        setTimeout(() => {
-                            window.showSlides(0); // Use window.showSlides as it's global
-                            window.startAutoSlide(); // Use window.startAutoSlide as it's global
-                        }, 100);
-                    }
-                }
-            }
-
-            // Add click event listeners to all sidebar links
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault(); // Prevent default link behavior
-                    event.stopPropagation(); // Stop event from bubbling up
-
-                    // Remove active-link class from all links
-                    sidebarLinks.forEach(item => item.classList.remove('active-link'));
-
-                    // Add active-link class to the clicked link
-                    this.classList.add('active-link');
-
-                    // Determine which content to load based on the link's ID
-                    // Remove 'nav-' prefix to get the contentSections key
-                    const sectionId = this.id.replace('nav-', '');
-                    loadSection(sectionId);
-                });
-            });
-
-            // Set initial content to Profile and highlight it
-            loadSection('profile');
-            document.getElementById('nav-profile').classList.add('active-link');
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove('active-link'));
+          link.classList.add('active-link');
+          const id = link.id.replace('nav-', '');
+          main.innerHTML = sections[id] || '<p class="text-center text-red-500">Content not found.</p>';
         });
+      });
 
-        // Define carousel functions globally as they are called from inline onclick attributes
-        let slideIndex = 0;
-        let slideInterval;
-
-        window.showSlides = function (n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            if (slides.length === 0) return;
-
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-            }
-            slides[slideIndex].classList.add('active');
-        }
-
-        window.plusSlides = function (n) {
-            clearInterval(slideInterval);
-            window.showSlides(slideIndex += n);
-            window.startAutoSlide();
-        }
-
-        window.startAutoSlide = function () {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(function () {
-                window.showSlides(slideIndex += 1);
-            }, 4000);
-        }
-    </script>
+      document.getElementById('nav-profile').classList.add('active-link');
+      main.innerHTML = sections['profile'];
+    });
+  </script>
 
 </body>
-
 </html>

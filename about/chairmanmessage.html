@@ -5,47 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chairman's Message - KSIT</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Internal CSS (Separated but embedded in the same file) -->
+  <style>
+    body {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .header-title {
+      font-size: 1.875rem; /* text-3xl */
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 2rem;
+    }
+
+    .message-box {
+      background-color: #ffffff;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .message-box {
+        flex-direction: row;
+      }
+    }
+
+    .image-section {
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .chairman-img {
+      width: 16rem; /* w-64 */
+      height: 360px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      margin: 0 auto 0.5rem;
+    }
+
+    .chairman-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .message-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1d4ed8;
+      margin-bottom: 1rem;
+    }
+
+    .message-content p {
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+      color: #374151;
+    }
+
+    .signed {
+      font-weight: 700;
+      margin-top: 1.5rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
-  <!-- Header Section -->
-  
-    <div class="max-w-7xl mx-auto px-4">
-      <h1 class="text-3xl font-bold">Chairman's Message</h1>
-    </div>
- 
+  <div class="page-container">
+    <!-- Header -->
+    <h1 class="header-title">Chairman's Message</h1>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto py-12 px-4 md:px-8">
-    <div class="bg-white shadow-md rounded-lg p-6 md:flex md:items-start space-y-6 md:space-y-0 md:space-x-8">
-  
-      <!-- Image of Chairman -->
-      <div class="flex-shrink-0">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmZUCk6hZ_ociaiCMXnsn1BoUzNoK2F-8faH6iqBV37M7tZl8CGvwMklaTKs7Gw0VuPmBY-0te4Zx-i5h3PrkNe6JiXK-Emie4OKe2VwaO-X6BhNbL_ch8fxqQ3eQ0WuzscSXUlyj1iEc/w182-h182/lt.jpg" alt="Chairman Photo" class="w-64 h-auto rounded-md shadow-md">
-        <!-- Make sure 'chairman.jpg' is present in the 'image/' folder -->
+    <!-- Message Box -->
+    <div class="message-box">
+      
+      <!-- Image + Name -->
+      <div class="image-section">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmZUCk6hZ_ociaiCMXnsn1BoUzNoK2F-8faH6iqBV37M7tZl8CGvwMklaTKs7Gw0VuPmBY-0te4Zx-i5h3PrkNe6JiXK-Emie4OKe2VwaO-X6BhNbL_ch8fxqQ3eQ0WuzscSXUlyj1iEc/w182-h182/lt.jpg"
+             alt="Chairman Photo"
+             class="chairman-img">
+        <p class="chairman-name">Smt. Jijabai Gowardhan Rathod</p>
       </div>
-  
-      <!-- Chairman's Message Content -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Message from the Chairman</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
+
+      <!-- Message Content -->
+      <div class="message-content">
+        <h2>Message from the Chairman</h2>
+        <p>
           It gives me great pride to welcome you to <strong>Lokmanya Tilak College of Arts, Commerce, and Science, Sevli</strong>—an institution that stands for progress through education and empowerment through knowledge.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p>
           Our goal is to bring quality higher education to the rural and semi-urban youth of Jalna district and surrounding regions. We believe that education is the most powerful tool to bring positive change in individuals, families, and society at large.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p>
           Under the guidance of <strong>Jijae Prathishthan Sevli</strong>, this college strives to provide accessible and affordable education rooted in values, with equal emphasis on academics, discipline, and personality development.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p>
           I invite students, parents, and well-wishers to join us in our journey to create a generation that is not just knowledgeable, but also responsible and socially committed. Let us work together toward shaping a better tomorrow.
         </p>
-  
-        <p class="font-bold text-gray-800 mt-6">- Chairman, Jijae Prathishthan Sevli</p>
+        <p class="signed">- Chairman, Jijae Prathishthan Sevli</p>
       </div>
-  
     </div>
-  </main>  
+  </div>
 
 </body>
 </html>

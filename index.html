@@ -642,6 +642,60 @@
             background-color: #003d82;
         }
 
+
+        /* about us  */
+
+
+        /* Section Styling */
+#about {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+/* Grid Layout */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* Text Styling */
+.about-text h3 {
+  font-size: 28px;
+  color: #1f2937;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  color: #4b5563;
+}
+
+/* Image Styling */
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 200%;
+  width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+
         /* Mobile Menu */
         .mobile-menu-overlay {
             position: fixed;
@@ -2281,11 +2335,11 @@
                     <p class="contact"><i class="fas fa-phone"></i> 9900710055</p>
                     <!-- <p class="affiliation">Affiliated to VTU, Belagavi & Approved by AICTE, New Delhi, Accredited by NBA (CSE & ECE) & NAAC A+</p> -->
                 </div>
-                <!-- <div class="awards-logos">
-                <img src="https://th.bing.com/th/id/OIP.EGowvf-I-JRGieAnHuUtGAHaHa?w=176&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="NAAC A+ Grade" class="award-logo">
+                <div class="awards-logos">
+                <!-- <img src="ima" alt="NAAC A+ Grade" class="award-logo">
                 <img src="https://th.bing.com/th/id/OIP.BoHyu28Ui3J_R9ewVKoY4QAAAA?w=190&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="NBA Accredited" class="award-logo">
-                <img src="https://th.bing.com/th/id/OIP.aT_U4hgp3eDShVJxeUqzNgHaEm?w=278&h=185&c=7&r=0&o=5&pid=1.7" alt="I-Gauge Gold" class="award-logo">
-            </div> -->
+                <img src="https://th.bing.com/th/id/OIP.aT_U4hgp3eDShVJxeUqzNgHaEm?w=278&h=185&c=7&r=0&o=5&pid=1.7" alt="I-Gauge Gold" class="award-logo"> -->
+            </div>
             </div>
 
             <nav class="main-navigation">
@@ -2298,11 +2352,12 @@
                             <li><a href="about/missionvision.html">Mission & Vision</a></li>
                             <li><a href="about/chairmanmessage.html"
                                     class="block px-4 py-2 hover:bg-gray-100">Chairman's Message</a></li>
+                            <li><a href="about/principalmessage.html">Principal message  </a></li>
                             <li><a href="about/principalanddirector.html"
-                                    class="block px-4 py-2 hover:bg-gray-100">Principal's Message</a></li>
+                                    class="block px-4 py-2 hover:bg-gray-100">principal</a></li>
                             <li><a href="about/affilationandapproval.html">Statutory Bodies</a></li>
                             <li><a href="about/management.html">Management</a></li>
-                            <!-- <li><a href="about/principalanddirector.html">Principal and Director </a></li> -->
+                           
                             <li><a href="about/academicadvisoryboard.html">Acadamic Advisory & Details </a></li>
                         </ul>
                     </li>
@@ -2435,48 +2490,50 @@
 
 
 
-        <!-- 🟩 About KSIT Section -->
-        <section id="about" class="py-12 px-4 md:px-8 bg-white scroll-mt-header">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <!-- Left Content -->
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 section-heading">
-                        About Lokmanya Tilak College of Arts, Commerce and Science, Sevli
-                    </h3>
+        <!-- 🟩 About LT Section -->
+        <section id="about">
+    <div class="about-container">
 
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Established in 2009, Lokmanya Tilak College of Arts, Commerce and Science, Sevli is a prominent
-                        institution under the management of <strong>Jijae Prathishthan Sevli</strong>. The college was
-                        founded to make higher education accessible and affordable for students from rural and
-                        semi-urban areas.
-                    </p>
+      <!-- Left Content -->
+      <div class="about-text">
+        <h3>About Lokmanya Tilak College of Arts, Commerce and Science, Sevli</h3>
 
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Affiliated to <strong>Dr. Babasaheb Ambedkar Marathwada University, Aurangabad</strong>, the
-                        college offers a variety of undergraduate and postgraduate programs including B.A., B.Com.,
-                        B.Sc., B.C.A., and M.Lib. Its academic offerings are designed to blend traditional knowledge
-                        with modern career-oriented learning.
-                    </p>
+        <p>
+          Established in 2009, Lokmanya Tilak College of Arts, Commerce and Science, Sevli is a prominent
+          institution under the management of <strong>Jijae Prathishthan Sevli</strong>. The college was
+          founded to make higher education accessible and affordable for students from rural and
+          semi-urban areas.
+        </p>
 
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        With a focus on all-round student development, the college provides well-equipped laboratories,
-                        a digital library, ICT-enabled classrooms, and a strong mentorship ecosystem led by experienced
-                        faculty members.
-                    </p>
+        <p>
+          Affiliated to <strong>Dr. Babasaheb Ambedkar Marathwada University, Aurangabad</strong>, the
+          college offers a variety of undergraduate and postgraduate programs including B.A., B.Com.,
+          B.Sc., B.C.A., and M.Lib. Its academic offerings are designed to blend traditional knowledge
+          with modern career-oriented learning.
+        </p>
 
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Lokmanya Tilak College is recognized for its disciplined environment, cultural activities, and
-                        community-oriented programs. It continues to play a vital role in shaping future leaders and
-                        responsible citizens through quality education.
-                    </p>
-                </div>
+        <p>
+          With a focus on all-round student development, the college provides well-equipped laboratories,
+          a digital library, ICT-enabled classrooms, and a strong mentorship ecosystem led by experienced
+          faculty members.
+        </p>
 
-                <!-- Right Image -->
-                <div class="flex justify-center items-center">
-                    <img src="image/aboutus.jpg" alt="Lokmanya Tilak College Campus"
-                        class="w-full max-w-sm rounded-lg shadow-lg">
-                </div>
-            </div>
+        <p>
+          Lokmanya Tilak College is recognized for its disciplined environment, cultural activities, and
+          community-oriented programs. It continues to play a vital role in shaping future leaders and
+          responsible citizens through quality education.
+        </p>
+      </div>
+
+      <!-- Right Image -->
+      <div class="about-image">
+        <img src="image/aboutus 2.jpg"
+          alt="Lokmanya Tilak College Campus" />
+      </div>
+
+    </div>
+  
+
 
 
             <div class="programmes-section">

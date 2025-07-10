@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Management Committee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-vN6lK0Yqexh1J..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       margin: 0;
@@ -109,6 +110,91 @@
         width: 100%;
       }
     }
+
+
+    /* //Footer  */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #1e2a44;
+      color: #ddd;
+      padding: 50px 30px 20px;
+      border-top: 4px solid white;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    footer h3 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    footer h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 40px;
+      height: 2px;
+      background-color: #00aaff;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    .social-icons {
+      margin-top: 12px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      font-size: 18px;
+      margin-right: 12px;
+      color: #00aaff;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 150px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #aaa;
+      font-size: 13px;
+      padding-top: 15px;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -142,7 +228,7 @@
   
 
   <div class="group-photo">
-    <img src="https://th.bing.com/th/id/OIP.-VqMrd4pYky21ixv3KQj5AHaDU?w=301&h=156&c=7&r=0&o=5&pid=1.7" alt="Management Group">
+    <img src="../image/staff.jpeg" alt="Management Group">
   </div>
 
   <div class="description text-gray-700">
@@ -173,6 +259,56 @@
       <a>Shri. Ravindra Gaikwad</a> (Director, Admin)
     </p>
   </div>
+
+  <footer>
+  <div class="footer-container">
+
+    <!-- Contact -->
+    <div>
+      <h3>Contact Us</h3>
+      <p style="margin-bottom: 8px;">LT College of Sevli, Lokmanya Tilak College, Sevli, Jalna - 431 213</p>
+      <p style="margin-bottom: 8px;">Phone: 89282 87777 | 98344 13770</p>
+      <p style="margin-bottom: 8px;">Email: <a href="mailto:ltcollagesevli@gmail.com">ltcollagesevli@gmail.com</a></p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3>Quick Links</h3>
+      <a href="#">Admissions</a>
+      <a href="#">Academic Calendar</a>
+      <a href="#">Departments</a>
+      <a href="#">Library</a>
+      <a href="#">Placements</a>
+    </div>
+
+    <!-- About LT -->
+    <div>
+      <h3>About LT</h3>
+      <a href="#">About Us</a>
+      <a href="#">Vision & Mission</a>
+      <a href="#">Principal's Message</a>
+      <a href="#">Accreditation</a>
+      <a href="#">IQAC</a>
+    </div>
+
+    <!-- Map -->
+    <div class="map-container">
+      <h3>Location</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18..." loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2024 K.S. Institute of Technology. All Rights Reserved.
+  </div>
+</footer>
+
   
 
 </body>

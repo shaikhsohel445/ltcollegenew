@@ -1,50 +1,249 @@
- 
- 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us</title>
+  <title>About Lokmanya Tilak College</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-vN6lK0Yqexh1J..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    /* Card Section */
+    .card {
+      background-color: #ffffff;
+      max-width: 1200px;
+      margin: 40px auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    @media (min-width: 992px) {
+      .card {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .card-text h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 20px;
+    }
+
+    .card-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: 16px;
+    }
+
+    .card-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-image img {
+      width: 100%;
+      max-width: 400px;
+      height: 450px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 20px;
+      }
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #1e2a44;
+      color: #ddd;
+      padding: 50px 30px 20px;
+      border-top: 4px solid white;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    footer h3 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    footer h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 40px;
+      height: 2px;
+      background-color: #00aaff;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    .social-icons {
+      margin-top: 12px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      font-size: 18px;
+      margin-right: 12px;
+      color: #00aaff;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 150px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #aaa;
+      font-size: 13px;
+      padding-top: 15px;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+    }
+  </style>
 </head>
- <section id="history" class="py-12 px-4 md:px-8 bg-white scroll-mt-header">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <div>
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 section-heading">
-          About Lokmanya Tilak College of Science and Commerce, Sevli
-        </h3>
-        
-        <p class="text-gray-700 leading-relaxed mb-4">
+<body>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="card">
+      <!-- Text Column -->
+      <div class="card-text">
+        <h3>About Lokmanya Tilak College of Science and Commerce, Sevli</h3>
+
+        <p>
           Established in 2009, Lokmanya Tilak College of Arts, Science and Commerce, Sevli is a premier institution in Jalna district, run by <strong>Jijae Prathishthan Sevli</strong>. The college was founded with a mission to empower rural students through quality and affordable higher education.
         </p>
-        
-        <p class="text-gray-700 leading-relaxed mb-4">
+
+        <p>
           The college is affiliated with <strong>Dr. Babasaheb Ambedkar Marathwada University, Aurangabad</strong> and offers a range of undergraduate and postgraduate programs including B.A., B.Com., B.Sc., B.C.A., and M.Lib. The academic curriculum is designed to balance foundational knowledge with practical and career-oriented skills.
         </p>
-        
-        <p class="text-gray-700 leading-relaxed mb-4">
+
+        <p>
           Over the years, Lokmanya Tilak College has built a reputation for academic discipline, student-centric learning, and community development. It serves as an educational hub for students across the region, especially from rural and semi-urban backgrounds.
         </p>
-        
-        <p class="text-gray-700 leading-relaxed mb-4">
+
+        <p>
           The institution features well-equipped laboratories, a digital library, ICT-enabled classrooms, and a dedicated faculty focused on student success. Special attention is given to moral values, soft skills, and co-curricular activities that help shape well-rounded individuals.
         </p>
-      
-        <p class="text-gray-700 leading-relaxed mb-4">
+
+        <p>
           With consistent growth and a commitment to quality, Lokmanya Tilak College continues to stand as a symbol of educational empowerment in Maharashtra.
         </p>
       </div>
-      
-      
-      <div class="flex justify-center items-center">
-        <img src="image/Gemini_Generated_Image_lxtxf9lxtxf9lxtx.png"
-             alt="Silver Jubilee Celebrations"
-             class="w-full max-w-sm rounded-lg shadow-lg">
+
+      <!-- Image Column -->
+      <div class="card-image">
+        <img src="../image/aboutus.jpg" alt="Silver Jubilee Celebrations" />
       </div>
     </div>
   </section>
-  </html>
-        
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- Contact -->
+      <div>
+        <h3>Contact Us</h3>
+        <p style="margin-bottom: 8px;">LT College of Sevli, Lokmanya Tilak College, Sevli, Jalna - 431 213</p>
+        <p style="margin-bottom: 8px;">Phone: 89282 87777 | 98344 13770</p>
+        <p style="margin-bottom: 8px;">Email: <a href="mailto:ltcollagesevli@gmail.com">ltcollagesevli@gmail.com</a></p>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#">Admissions</a>
+        <a href="#">Academic Calendar</a>
+        <a href="#">Departments</a>
+        <a href="#">Library</a>
+        <a href="#">Placements</a>
+      </div>
+
+      <!-- About LT -->
+      <div>
+        <h3>About LT</h3>
+        <a href="#">About Us</a>
+        <a href="#">Vision & Mission</a>
+        <a href="#">Principal's Message</a>
+        <a href="#">Accreditation</a>
+        <a href="#">IQAC</a>
+      </div>
+
+      <!-- Map -->
+      <div class="map-container">
+        <h3>Location</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18..." loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2024 K.S. Institute of Technology. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,125 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Center - Lokmanya Tilak College, Sevli</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; color: #333; }
-        .main-content-wrapper { background-color: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .sidebar-aside { background-color: #003366; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .sidebar-aside h3 { border-bottom: 1px solid #3182ce; color: #fff; }
-        .sidebar-nav a { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #fff; transition: 0.3s; }
-        .sidebar-nav li:last-child a { border-bottom: none; }
-        .sidebar-nav a:hover { background-color: #2b6cb0; }
-        .sidebar-nav a.active-link { background-color: #1a568a; font-weight: 600; }
-        .content-display-area { background-color: #fff; border-radius: 10px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); }
-        .content-display-area h1 { color: #003366; }
-        .content-display-area h3 { color: #1a568a; }
-        .gallery-grid img { border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
-        .gallery-grid img:hover { transform: scale(1.03); }
-        @media (max-width: 768px) {
-            .main-content-wrapper { flex-direction: column; }
-            .sidebar-aside { width: 100%; margin-bottom: 20px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Center - Lokmanya Tilak College, Sevli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .main-content-wrapper {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .sidebar-aside {
+      background-color: #003366;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .sidebar-aside h3 {
+      border-bottom: 1px solid #3182ce;
+      color: #fff;
+    }
+    .sidebar-nav a {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      transition: 0.3s;
+    }
+    .sidebar-nav li:last-child a {
+      border-bottom: none;
+    }
+    .sidebar-nav a:hover {
+      background-color: #2b6cb0;
+    }
+    .sidebar-nav a.active-link {
+      background-color: #1a568a;
+      font-weight: 600;
+    }
+    .content-display-area h1 {
+      color: #003366;
+    }
+    .gallery-grid img {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+  </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <div class="flex flex-1 container mx-auto mt-8 p-4 sm:p-6 lg:p-8 main-content-wrapper">
-        <aside class="w-64 p-4 mr-6 flex-shrink-0 sidebar-aside">
-            <h3 class="text-xl font-semibold mb-4 pb-2">MEDIA</h3>
-            <ul class="space-y-0 sidebar-nav">
-                <li><a href="#" id="nav-photos" class="block rounded-md font-medium active-link"><i class="fas fa-image mr-2"></i> Photos</a></li>
-                <li><a href="#" id="nav-videos" class="block rounded-md font-medium"><i class="fas fa-video mr-2"></i> Videos</a></li>
-                <li><a href="#" id="nav-press-releases" class="block rounded-md font-medium"><i class="fas fa-newspaper mr-2"></i> Press Releases</a></li>
-                <li><a href="#" id="nav-contact-media" class="block rounded-md font-medium"><i class="fas fa-envelope mr-2"></i> Contact Media</a></li>
-            </ul>
-        </aside>
 
-        <main id="main-content-display" class="flex-1 p-6 content-display-area"></main>
-    </div>
+  <div class="flex flex-1 container mx-auto mt-8 p-4 sm:p-6 lg:p-8 main-content-wrapper">
+    <aside class="w-64 p-4 mr-6 flex-shrink-0 sidebar-aside">
+      <h3 class="text-xl font-semibold mb-4 pb-2">MEDIA</h3>
+      <ul class="sidebar-nav space-y-0">
+        <li><a href="#" id="nav-photos" class="block rounded-md font-medium active-link"><i class="fas fa-image mr-2"></i> Photos</a></li>
+        <li><a href="#" id="nav-videos" class="block rounded-md font-medium"><i class="fas fa-video mr-2"></i> Videos</a></li>
+        <li><a href="#" id="nav-press-releases" class="block rounded-md font-medium"><i class="fas fa-newspaper mr-2"></i> Press Releases</a></li>
+        <li><a href="#" id="nav-contact-media" class="block rounded-md font-medium"><i class="fas fa-envelope mr-2"></i> Contact Media</a></li>
+      </ul>
+    </aside>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mainContentDisplay = document.getElementById('main-content-display');
-            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+    <main id="main-content-display" class="flex-1 p-6 content-display-area bg-white rounded-lg"></main>
+  </div>
 
-            const contentSections = {
-                'photos': `
-                    <div class="text-center mb-8">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Photo Gallery</h1>
-                        <p class="text-lg sm:text-xl max-w-2xl mx-auto">Glimpses from Lokmanya Tilak College, Sevli — events, celebrations, and daily campus life.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gallery-grid">
-                        <img src="image/silver_jubilee.jpg" alt="Silver Jubilee Celebration">
-                        <img src="image/faculty_event.jpg" alt="Faculty Meet">
-                        <img src="image/cultural_day.jpg" alt="Cultural Day">
-                        <img src="image/seminar.jpg" alt="Seminar Event">
-                        <img src="image/graduation_day.jpg" alt="Graduation Ceremony">
-                    </div>`,
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mainContentDisplay = document.getElementById('main-content-display');
+      const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
 
-                'videos': `
-                    <div class="text-center mb-8">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Video Gallery</h1>
-                        <p class="text-lg sm:text-xl max-w-2xl mx-auto">Official college videos including events, speeches, and student showcases.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                            <p class="text-sm text-center mt-2 text-gray-700">Annual Gathering Highlights</p>
-                        </div>
-                        <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/abc123xyz" frameborder="0" allowfullscreen></iframe>
-                            <p class="text-sm text-center mt-2 text-gray-700">Independence Day 2025</p>
-                        </div>
-                    </div>`,
+      const contentSections = {
+        photos: `
+          <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Photo Gallery</h1>
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto">Glimpses from Lokmanya Tilak College, Sevli — events, celebrations, and daily campus life.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gallery-grid">
+            <img src="https://th.bing.com/th/id/OIP.SaRz63RTbKI5uXM_TFzpyAHaFj?w=295&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Silver Jubilee Celebration" class="rounded shadow-md">
+            <img src="https://th.bing.com/th/id/OIP.l1zc_zdqjLU-OSzAVxgyhgHaE5?w=207&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Faculty Meet" class="rounded shadow-md">
+            <img src="https://th.bing.com/th/id/OIP.huQMgsVD0bxNHiJ7nBmHqAHaHa?w=174&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Cultural Day" class="rounded shadow-md">
+            <img src="https://th.bing.com/th/id/OIP.vLmRnSMyplTNxISvHgvofgHaDk?w=305&h=168&c=7&r=0&o=7&pid=1.7&rm=3" alt="Seminar Event" class="rounded shadow-md">
+            <img src="https://th.bing.com/th/id/OIP.pvFVk_7H-2UDhwzzmSGNSgHaE6?w=317&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Graduation Ceremony" class="rounded shadow-md">
+          </div>
+        `,
 
-                'press-releases': `
-                    <div class="text-center mb-8">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Press Releases</h1>
-                        <p class="text-lg sm:text-xl max-w-2xl mx-auto">Official updates and media coverage of Lokmanya Tilak College, Sevli.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                            <h3 class="text-2xl font-semibold mb-2 text-gray-800">College Wins Best Rural Institution Award (June 2025)</h3>
-                            <p class="text-base mb-3 text-gray-700">Recognized for its commitment to inclusive education and rural empowerment in Maharashtra.</p>
-                            <a href="#" class="text-blue-600 hover:underline text-sm">Read Full Press Release</a>
-                        </div>
-                    </div>`,
+        videos: `
+          <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Video Gallery</h1>
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto">Official college videos including events, speeches, and student showcases.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/6ygTNiz550I?si=FaaspQhQNnA4VPMG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <p class="text-sm text-center mt-2 text-gray-700">Annual Gathering Highlights</p>
+            </div>
+            <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/dpVvXIDJWQ0?si=p-bsrSCBUmbJfA3C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <p class="text-sm text-center mt-2 text-gray-700">Independence Day 2025</p>
+            </div>
+          </div>
+        `,
 
-                'contact-media': `
-                    <div class="text-center mb-8">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Contact Media Cell</h1>
-                        <p class="text-lg sm:text-xl max-w-2xl mx-auto">Reach out to our media cell for official communications and coverage coordination.</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
-                        <p class="mb-2 text-gray-800"><i class="fas fa-user mr-2 text-blue-600"></i> <strong>Media Coordinator:</strong> Prof. Snehal Pawar</p>
-                        <p class="mb-2 text-gray-800"><i class="fas fa-envelope mr-2 text-blue-600"></i> <strong>Email:</strong> <a href="mailto:media@ltcollege.org" class="text-blue-600 hover:underline">media@ltcollege.org</a></p>
-                        <p class="mb-2 text-gray-800"><i class="fas fa-phone mr-2 text-blue-600"></i> <strong>Phone:</strong> +91-9876543210</p>
-                        <p class="mt-4 text-sm text-gray-700">For interviews, press kits, and media tours, please contact us during working hours.</p>
-                    </div>`
-            };
+        'press-releases': `
+          <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Press Releases</h1>
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto">Official updates and media coverage of Lokmanya Tilak College, Sevli.</p>
+          </div>
+          <div class="space-y-6">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 class="text-2xl font-semibold mb-2 text-gray-800">College Wins Best Rural Institution Award (June 2025)</h3>
+              <p class="text-base mb-3 text-gray-700">Recognized for its commitment to inclusive education and rural empowerment in Maharashtra.</p>
+              <a href="#" class="text-blue-600 hover:underline text-sm">Read Full Press Release</a>
+            </div>
+          </div>
+        `,
 
-            function loadSection(sectionId) {
-                mainContentDisplay.innerHTML = contentSections[sectionId] || `<div class="text-center py-10"><h2 class="text-3xl font-bold text-red-600 mb-4">Content Not Found</h2><p class="text-lg text-gray-700">The section "${sectionId}" is not available.</p></div>`;
-            }
+        'contact-media': `
+          <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Contact Media Cell</h1>
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto">Reach out to our media cell for official communications and coverage coordination.</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <p class="mb-2 text-gray-800"><i class="fas fa-user mr-2 text-blue-600"></i> <strong>Media Coordinator:</strong> Prof. Snehal Pawar</p>
+            <p class="mb-2 text-gray-800"><i class="fas fa-envelope mr-2 text-blue-600"></i> <strong>Email:</strong> <a href="mailto:media@ltcollege.org" class="text-blue-600 hover:underline">media@ltcollege.org</a></p>
+            <p class="mb-2 text-gray-800"><i class="fas fa-phone mr-2 text-blue-600"></i> <strong>Phone:</strong> +91-9876543210</p>
+            <p class="mt-4 text-sm text-gray-700">For interviews, press kits, and media tours, please contact us during working hours.</p>
+          </div>
+        `
+      };
 
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    sidebarLinks.forEach(item => item.classList.remove('active-link'));
-                    this.classList.add('active-link');
-                    const sectionId = this.id.replace('nav-', '');
-                    loadSection(sectionId);
-                });
-            });
+      function loadSection(sectionId) {
+        mainContentDisplay.innerHTML = contentSections[sectionId] || `<div class="text-center py-10"><h2 class="text-3xl font-bold text-red-600 mb-4">Content Not Found</h2><p class="text-lg text-gray-700">The section "${sectionId}" is not available.</p></div>`;
+      }
 
-            loadSection('photos');
-            document.getElementById('nav-photos').classList.add('active-link');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          sidebarLinks.forEach(item => item.classList.remove('active-link'));
+          this.classList.add('active-link');
+          const sectionId = this.id.replace('nav-', '');
+          loadSection(sectionId);
         });
-    </script>
+      });
+
+      // Load default section
+      loadSection('photos');
+    });
+  </script>
 </body>
 </html>
